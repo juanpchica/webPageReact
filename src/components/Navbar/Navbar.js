@@ -9,7 +9,9 @@ import { faHome,faStreetView,faProcedures,faBalanceScaleLeft,faTimes,faBars } fr
 export const Navbar = () => {
 
     const [menuOpen,setMenuOpen] = useState(false);
-
+    const closeMenu = ()=>{
+        setMenuOpen(false)
+    }
 
     return (
         <header>
@@ -26,17 +28,17 @@ export const Navbar = () => {
                     <div className={menuOpen ? `navbar-container navbar-container-open`:`navbar-container`}>
                         <ul>
                             <li>
-                                <Link to="/">
+                                <Link to="/" onClick={closeMenu}>
                                     <FontAwesomeIcon icon={faHome} /> Home
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/">
+                                <Link to="/service" onClick={closeMenu}>
                                     <FontAwesomeIcon icon={faProcedures} /> Service
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/">
+                                <Link to="/product" onClick={closeMenu}>
                                     <FontAwesomeIcon icon={faStreetView} /> Product
                                 </Link>
                             </li>
