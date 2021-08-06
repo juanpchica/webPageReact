@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import "./Navbar.scss";
+
 
 export const Navbar = () => {
     return (
-        <div>
-            nav
-        </div>
-    )
+        <nav className="navbar">
+            <div className="navbar-container">
+                nav
+            </div>
+        </nav>
+    ) 
 }
