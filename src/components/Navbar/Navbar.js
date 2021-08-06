@@ -8,7 +8,8 @@ import { faHome,faStreetView,faProcedures,faBalanceScaleLeft,faTimes,faBars } fr
 
 export const Navbar = () => {
 
-    const [menuOpen,setMenuOpen] = useState(false)
+    const [menuOpen,setMenuOpen] = useState(false);
+
 
     return (
         <header>
@@ -18,11 +19,11 @@ export const Navbar = () => {
                         <FontAwesomeIcon icon={faBalanceScaleLeft} /> BRAND
                     </Link>
                 </div>
-                <nav>
-                    <div className="navbar-icon">
+                <nav className="flex">
+                    <div className="navbar-icon" onClick={()=>{setMenuOpen(!menuOpen)}}>
                         {menuOpen ?<FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
                     </div>
-                    <div className="navbar-container">
+                    <div className={menuOpen ? `navbar-container navbar-container-open`:`navbar-container`}>
                         <ul>
                             <li>
                                 <Link to="/">
